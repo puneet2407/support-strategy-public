@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support Bounce Strategy — Plain-English Guide</title>
+<style>
+  :root {
+    --bg: #f7f6f2;
+    --card: #ffffff;
+    --ink: #17202a;
+    --muted: #5d6b78;
+    --line: #e3ded2;
+    --accent: #0f766e;
+    --accent-soft: #e6f4f1;
+    --warn: #9a5b00;
+    --warn-soft: #fff4df;
+    --danger: #a33;
+    --code: #f0eee8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  main {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 22px 72px;
+  }
+  h1 {
+    font-size: 34px;
+    line-height: 1.1;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: 22px;
+    margin: 38px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+  h3 { font-size: 17px; margin: 22px 0 8px; }
+  p { margin: 10px 0; }
+  ul, ol { padding-left: 22px; }
+  li { margin: 6px 0; }
+  code {
+    background: var(--code);
+    padding: 1px 5px;
+    border-radius: 5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.92em;
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 15px;
+    margin-top: 0;
+  }
+  .callout {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 22px 0;
+  }
+  .callout p { margin: 6px 0; }
+  .warn {
+    background: var(--warn-soft);
+    border-left: 4px solid var(--warn);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 22px 0;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 16px 0;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  th, td {
+    text-align: left;
+    padding: 11px 13px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  th {
+    background: #f1efe9;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: #44515d;
+  }
+  tr:last-child td { border-bottom: 0; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+  }
+  .mini {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 15px;
+  }
+  .mini b { display: block; margin-bottom: 4px; }
+  .mini span { color: var(--muted); font-size: 14px; }
+  svg { display: block; width: 100%; height: auto; }
+  .footer {
+    margin-top: 44px;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid var(--line);
+    padding-top: 16px;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 999px;
+    padding: 4px 10px;
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+<main>
+  <span class="tag">Plain-English guide</span>
+  <h1>Support Bounce Strategy</h1>
+  <p class="sub">The US/Canada swing-trading book: buy strong stocks when they dip to a proven floor and hold it.</p>
+
+  <div class="callout">
+    <p><b>One-sentence version:</b> find a stock that is still in an uptrend, wait for it to dip near a support level, buy only if the level holds into the close, place a stop below the level, and let winners run.</p>
+  </div>
+
+  <h2>The big idea</h2>
+  <p>Most pullbacks are just noise. The strategy tries to separate “healthy dip” from “broken stock” by checking three things:</p>
+  <div class="grid">
+    <div class="mini"><b>1. Is there a floor?</b><span>A recent pivot low acts as support — a price area where buyers previously stepped in.</span></div>
+    <div class="mini"><b>2. Did the floor hold?</b><span>The day’s low may dip into the support zone, but the close must finish back above support.</span></div>
+    <div class="mini"><b>3. Is the trend still up?</b><span>The stock must be above its 200-day average, so the strategy avoids catching falling knives.</span></div>
+  </div>
+
+  <h2>What the strategy is really doing</h2>
+  <p>It is not trying to predict the exact bottom. It is waiting for a repeatable pattern:</p>
+  <ol>
+    <li><b>Find support.</b> A pivot low is a bar whose low is the lowest point in a small window around it. Once enough bars pass, that pivot is “confirmed.”</li>
+    <li><b>Wait for a test.</b> Price comes down toward that support area but does not necessarily have to close higher on the day.</li>
+    <li><b>Require the level to hold.</b> The important part is the close: if the stock closes above support after tagging the zone, the floor may have worked.</li>
+    <li><b>Only buy uptrends.</b> If the stock is below its 200-day average, the dip is treated as dangerous rather than attractive.</li>
+    <li><b>Risk first, upside second.</b> The initial stop is placed below support, so the trade has a defined place to be wrong.</li>
+    <li><b>Let winners run.</b> If price reaches the resistance target, the stop switches from fixed to a trailing stop, so the position can keep going.</li>
+  </ol>
+
+  <h2>The rules in simple terms</h2>
+  <table>
+    <thead>
+      <tr><th>Piece</th><th>Plain meaning</th><th>Locked rule</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Universe</b></td>
+        <td>Liquid US and Canadian stocks, not random penny stocks.</td>
+        <td>About 229 US/Canada large- and mid-cap names. The list should be refreshed by rule each January rather than hand-picked forever.</td>
+      </tr>
+      <tr>
+        <td><b>Support</b></td>
+        <td>The nearest recent floor price.</td>
+        <td>Most recent confirmed pivot low: lowest low in an 11-bar window, confirmed 5 bars later.</td>
+      </tr>
+      <tr>
+        <td><b>Resistance / target</b></td>
+        <td>The next major ceiling the trade is aiming for.</td>
+        <td>Highest confirmed pivot high over the last 120 trading days.</td>
+      </tr>
+      <tr>
+        <td><b>ATR</b></td>
+        <td>A measure of how much the stock normally moves in a day.</td>
+        <td>20-day average true range. Used to decide how close to support counts as “in the zone” and how far stops/trails sit.</td>
+      </tr>
+      <tr>
+        <td><b>Entry zone</b></td>
+        <td>Price has come close enough to support to matter.</td>
+        <td>Day’s low ≤ support + 1.0 × ATR(20).</td>
+      </tr>
+      <tr>
+        <td><b>Level held</b></td>
+        <td>The stock dipped but did not finish weak.</td>
+        <td>Close &gt; support.</td>
+      </tr>
+      <tr>
+        <td><b>Trend filter</b></td>
+        <td>Only buy dips inside an uptrend.</td>
+        <td>Close &gt; 200-day simple moving average.</td>
+      </tr>
+      <tr>
+        <td><b>Ranking</b></td>
+        <td>If several stocks qualify, prefer stronger recent performers.</td>
+        <td>Rank candidates by 6-month momentum.</td>
+      </tr>
+      <tr>
+        <td><b>Position count</b></td>
+        <td>Do not put all money into one idea.</td>
+        <td>Maximum 10 positions; about 10% of equity per position; no leverage.</td>
+      </tr>
+      <tr>
+        <td><b>Initial stop</b></td>
+        <td>The “I was wrong” line.</td>
+        <td>Support − 3.0 × ATR(20), fixed at entry.</td>
+      </tr>
+      <tr>
+        <td><b>Target / trail switch</b></td>
+        <td>First aim for resistance; after that, give the winner room.</td>
+        <td>Once close ≥ resistance target, stop becomes a 3.0 × ATR trail off the highest close, never below the initial stop.</td>
+      </tr>
+      <tr>
+        <td><b>Exit timing</b></td>
+        <td>Avoid acting on unfinished information.</td>
+        <td>Signals are evaluated after the close and executed at the next open.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>A picture of the trade</h2>
+  <div class="card">
+    <svg viewBox="0 0 920 430" role="img" aria-label="Simple diagram of support bounce entry and exit">
+      <rect x="80" y="50" width="760" height="310" fill="#fbfaf7" stroke="#ddd6c8"></rect>
+      <line x1="80" y1="360" x2="840" y2="360" stroke="#cfc8b9" stroke-width="1"></line>
+
+      <line x1="80" y1="78" x2="840" y2="78" stroke="#8a6d1f" stroke-width="2" stroke-dasharray="8 6"></line>
+      <text x="828" y="68" text-anchor="end" font-size="14" fill="#8a6d1f" font-weight="700">target: pivot resistance</text>
+
+      <rect x="80" y="205" width="760" height="45" fill="#e6f4f1" opacity="0.85"></rect>
+      <line x1="80" y1="250" x2="840" y2="250" stroke="#0f766e" stroke-width="3"></line>
+      <text x="90" y="228" font-size="14" fill="#0f766e" font-weight="700">support zone</text>
+      <text x="828" y="272" text-anchor="end" font-size="14" fill="#0f766e">support</text>
+
+      <line x1="80" y1="315" x2="840" y2="315" stroke="#a33" stroke-width="2" stroke-dasharray="8 6"></line>
+      <text x="828" y="337" text-anchor="end" font-size="14" fill="#a33">initial stop: support − 3 × ATR</text>
+
+      <path d="M95 150 C 165 141, 235 168, 292 203 C 322 221, 350 235, 388 231 C 420 227, 452 204, 486 182 C 535 150, 610 105, 682 82 C 720 70, 762 60, 800 58 C 818 72, 828 88, 836 103"
+            fill="none" stroke="#17202a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></path>
+
+      <path d="M690 128 C 735 120, 785 112, 836 104" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-dasharray="7 6"></path>
+      <text x="700" y="146" font-size="13" fill="#0f766e">trail stop follows the high</text>
+
+      <circle cx="388" cy="231" r="7" fill="#0f766e"></circle>
+      <text x="388" y="200" text-anchor="middle" font-size="13" fill="#0f766e" font-weight="700">low tags zone</text>
+      <text x="388" y="382" text-anchor="middle" font-size="12" fill="#5d6b78">dip + hold</text>
+
+      <circle cx="500" cy="179" r="7" fill="#17202a"></circle>
+      <text x="515" y="160" font-size="13" fill="#17202a" font-weight="700">buy next open</text>
+      <text x="500" y="382" text-anchor="middle" font-size="12" fill="#5d6b78">entry</text>
+
+      <circle cx="705" cy="76" r="7" fill="#8a6d1f"></circle>
+      <text x="705" y="55" text-anchor="middle" font-size="13" fill="#8a6d1f" font-weight="700">target reached</text>
+      <text x="705" y="382" text-anchor="middle" font-size="12" fill="#5d6b78">target hit</text>
+
+      <circle cx="836" cy="103" r="7" fill="#a33"></circle>
+      <text x="800" y="126" text-anchor="end" font-size="13" fill="#a33" font-weight="700">trail exit</text>
+      <text x="824" y="382" text-anchor="middle" font-size="12" fill="#5d6b78">exit</text>
+    </svg>
+  </div>
+
+  <h2>Example with made-up numbers</h2>
+  <div class="card">
+    <p>Suppose a stock has:</p>
+    <ul>
+      <li>support at <b>$100</b>,</li>
+      <li>ATR(20) at <b>$2</b>,</li>
+      <li>resistance target at <b>$115</b>,</li>
+      <li>200-day average at <b>$92</b>.</li>
+    </ul>
+    <p>One day the low falls to <b>$101</b> — inside the support zone because $100 + $2 = $102 — but the close finishes at <b>$103</b>. That is a candidate: the stock dipped toward support, closed above it, and is above its 200-day average.</p>
+    <p>The initial stop is <b>$100 − 3×$2 = $94</b>. If the stock later closes at <b>$115</b> or higher, the exit rule switches to a trailing stop: highest close since entry minus $6, never below $94. From then on, the trade is allowed to run until the trail is hit.</p>
+  </div>
+
+  <h2>Why this can work</h2>
+  <ul>
+    <li><b>Better entry location.</b> Buying near support means the stop is closer and more logical than buying after a breakout has already moved away from the level.</li>
+    <li><b>Trend filter.</b> Requiring price above the 200-day average avoids many downtrends that look “cheap” but keep falling.</li>
+    <li><b>Defined risk.</b> Every trade has a stop at entry, so the strategy does not rely on hope.</li>
+    <li><b>Let winners run.</b> The trail after the target is meant to capture bigger moves instead of selling too early.</li>
+    <li><b>Diversification.</b> Up to 10 positions reduce the damage from any single bad trade.</li>
+  </ul>
+
+  <h2>What it is not</h2>
+  <ul>
+    <li>It is <b>not</b> a guarantee that support will hold.</li>
+    <li>It is <b>not</b> market timing — there is no rule that moves everything to cash when SPY is weak.</li>
+    <li>It is <b>not</b> sector-neutral — momentum can pile several positions into the same sector.</li>
+    <li>It is <b>not</b> a way to avoid bear markets — the book can stay mostly invested.</li>
+    <li>It is <b>not</b> options or leverage — it is a stock-swing system with stops and position limits.</li>
+  </ul>
+
+  <h2>Honest expectations</h2>
+  <div class="warn">
+    <p>The headline backtest looks very strong, but part of that comes from the universe being today’s winners. A stricter point-in-time test — using stocks as they were known at the time, including names that later failed — is much closer to “around SPY, with more volatility and deeper drawdowns.”</p>
+    <p>Practical takeaway: do not size this as if 30%+ CAGR is normal. Treat it as a disciplined swing system whose edge must be proven live, not a money-printing machine.</p>
+  </div>
+  <table>
+    <thead><tr><th>Measure</th><th>What it means</th></tr></thead>
+    <tbody>
+      <tr><td>Backtest win rate</td><td>About 55% of trades were winners in the reported backtest.</td></tr>
+      <tr><td>Median hold</td><td>About 57 days — this is a swing system, not day trading.</td></tr>
+      <tr><td>Worst trade</td><td>About −43.5% in the backtest, so stops do not make losses impossible.</td></tr>
+      <tr><td>Realistic view</td><td>Expect something closer to SPY-like returns with higher volatility, unless live results prove otherwise.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Daily workflow</h2>
+  <ol>
+    <li>After the close, run the scan.</li>
+    <li>Look at <b>entry candidates</b>: stocks whose low tagged the support zone, closed above support, and are above the 200-day average.</li>
+    <li>If there are more candidates than open slots, take the highest 6-month momentum names first.</li>
+    <li>Enter at the <b>next open</b>, not at the signal close.</li>
+    <li>Check open positions for <b>EXIT</b> signals and sell at the next open.</li>
+    <li>Record the real fill price and shares — a signal is not a fill.</li>
+  </ol>
+
+  <h2>Bottom line</h2>
+  <div class="callout">
+    <p>The strategy is a simple rule: <b>buy dips that hold support inside an uptrend, keep the stop below the floor, and let winners run.</b> Its edge comes from discipline and location, not from predicting the market. Its risk comes from concentration, always being invested, and the possibility that the backtest was kinder than real life.</p>
+  </div>
+
+  <p class="footer">Sources: <code>strategy/support/SUPPORT.md</code>, <code>strategy/support/signals.py</code>, <code>strategy/support/backtest.py</code>. This is an explanation, not financial advice.</p>
+</main>
+</body>
+</html>
