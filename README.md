@@ -1,9 +1,14 @@
-# Support Strategy Explanation
+# Support Strategy Public Docs
 
-Public plain-English explanation of the US/Canada support-bounce swing strategy.
+Public documentation for the US/Canada support-bounce swing strategy.
 
-This repository contains a single static explanation page only. It does not include trading code, account data, positions, credentials, or live state.
+## Pages
 
-GitHub Pages serves `index.html` at the repository's Pages URL.
+- `index.html` — plain-English explanation of the strategy
+- `backtest-analysis.html` — interactive backtest performance and trade history
 
-Not investment advice.
+This repository contains static documentation and backtest results only. It does not include trading code, account data, positions, credentials, or live state.
+
+GitHub Pages serves the files at the repository's Pages URL.
+
+Not investment advice. Backtest results are historical and biased; see the "Honest expectation" notes on the pages.
