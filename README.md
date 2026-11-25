@@ -6,6 +6,7 @@ Public documentation for the US/Canada support-bounce swing strategy.
 
 - `index.html` — plain-English explanation of the strategy
 - `backtest-analysis.html` — interactive backtest performance and trade history
+- `example.html` — real AAPL trade example with annotated price chart
 
 This repository contains static documentation and backtest results only. It does not include trading code, account data, positions, credentials, or live state.
 
